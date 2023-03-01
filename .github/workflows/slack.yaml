@@ -16,7 +16,12 @@ jobs:
         with:
           payload: |
             {
-              "text": "[gradle/gradle#${{ github.event.issue.number }} - ${{ github.event.issue.title }}](https://github.com/gradle/gradle/${{ github.event.issue.number }}) issue has the `${{ github.event.label.name }}` label"
+              "type": "section",
+               "text": {
+                  "type": "mrkdwn",
+                  "text": "<https://github.com/gradle/gradle/${{ github.event.issue.number }}|[gradle/gradle#${{ github.event.issue.number }}] ${{ github.event.issue.title }}> has the `${{ github.event.label.name }}` label"
+                }
+              
             }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
