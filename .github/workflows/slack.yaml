@@ -19,7 +19,7 @@ jobs:
               "type": "section",
                "text": {
                   "type": "mrkdwn",
-                  "text": "<https://github.com/gradle/gradle/${{ github.event.issue.number }}|[gradle/gradle#${{ github.event.issue.number }}] ${{ github.event.issue.title }}> has the `${{ github.event.label.name }}` label"
+                  "text": "<https://github.com/gradle/gradle/${{ github.event.issue.number }}|gradle/gradle#${{ github.event.issue.number }} ${{ github.event.issue.title }}> has the ${{ github.event.label.name }} label"
                 }
               
             }
