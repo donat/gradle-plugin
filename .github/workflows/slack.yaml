@@ -16,7 +16,7 @@ jobs:
         with:
           payload: |
             {
-              text": "Issue labels updated",
+              "text": "Issue labels updated",
               "blocks": [
                 {
                   "type": "section",
