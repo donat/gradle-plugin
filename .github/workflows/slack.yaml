@@ -7,7 +7,7 @@ on:
 
 jobs:
   send-slack-notification:
-    if: ${{ github.event.label.name == 'ide' }}
+    if: ${{ github.event.label.name == 'ide' || github.event.label.name == 'tooling' }}
     runs-on: ubuntu-latest
     steps:
       - name: Send slack message on updated issue labels
@@ -28,4 +28,4 @@ jobs:
               ]
             }
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_URL: ${{ secrets.IDE_EXPERIENCE_SLACK_WEBHOOK_URL }}
