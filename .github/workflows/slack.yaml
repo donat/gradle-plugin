@@ -1,5 +1,5 @@
-name: GitHub Slack Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+name: IDE Experience team ntofier
+run-name: Send slack message on updated issue labels
 on:
   issues:
     types:
@@ -10,7 +10,7 @@ jobs:
     if: ${{ github.event.label.name == 'ide' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Send GitHub Action trigger data to Slack workflow
+      - name: Send slack message on updated issue labels
         id: slack
         uses: slackapi/slack-github-action@v1.23.0
         with:
