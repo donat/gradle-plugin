@@ -1,8 +1,13 @@
 name: GitHub Slack Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+on:
+  issues:
+    types:
+      - labeled
+
 jobs:
-  Explore-GitHub-Actions:
+  send-slack-notification:
+    if: ${{ github.event.label.name == 'ide' }}
     runs-on: ubuntu-latest
     steps:
       - name: Send GitHub Action trigger data to Slack workflow
@@ -11,13 +16,13 @@ jobs:
         with:
           payload: |
             {
-              "text": "GitHub Action build result",
+              "text": "gradle/gradle issue NUMBER has label ",
               "blocks": [
                 {
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "GitHub Action build result"
+                    "text": "GitHub Action build result 2"
                   }
                 }
               ]
