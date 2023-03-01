@@ -16,7 +16,7 @@ jobs:
         with:
           payload: |
             {
-              "text": "gradle/gradle issue NUMBER has label ",
+              "text": "gradle/gradle issue ${{ github.event.issue.html_url }} has label {{ github.event.label.name }}",
               "blocks": [
                 {
                   "type": "section",
