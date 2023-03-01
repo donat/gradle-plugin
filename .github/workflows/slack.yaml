@@ -1,4 +1,4 @@
-name: IDE Experience team ntofier
+name: IDE Experience team notifier
 run-name: Send slack message on updated issue labels
 on:
   issues:
